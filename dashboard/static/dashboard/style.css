@@ -1,0 +1,210 @@
+:root {
+    --green-900: #123524;
+    --green-800: #1b4d36;
+    --green-700: #2d6a4f;
+    --green-500: #4fb36d;
+    --green-200: #dff5e6;
+    --neutral-900: #1b1d1a;
+    --neutral-700: #4a524c;
+    --neutral-200: #edf3ee;
+    --white: #ffffff;
+    --yellow: #f7d57d;
+    --shadow: rgba(17, 36, 22, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg, #edf7ef 0%, #f8faf8 100%);
+    color: var(--neutral-900);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--green-900);
+    color: var(--white);
+    padding: 1.2rem 5vw;
+    box-shadow: 0 6px 18px var(--shadow);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    color: #d9f6dc;
+    margin: 0 0 0.35rem;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+}
+
+.badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+}
+
+.page-shell {
+    width: min(1180px, 92vw);
+    margin: 2rem auto 4rem;
+}
+
+.hero {
+    background: var(--white);
+    border-radius: 18px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 10px 25px var(--shadow);
+    border: 1px solid rgba(18,53,36,0.08);
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    margin-top: 0;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    color: var(--green-900);
+}
+
+.hero p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--neutral-700);
+}
+
+.panel {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 10px 25px var(--shadow);
+    padding: 1.5rem;
+    border: 1px solid rgba(18,53,36,0.08);
+}
+
+.form-panel {
+    margin-bottom: 2rem;
+}
+
+.form-panel h3 {
+    margin-top: 0;
+    color: var(--green-900);
+    font-size: 1.5rem;
+}
+
+.grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem 1.25rem;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-group label {
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+    color: var(--green-800);
+}
+
+.field-group input, .field-group select {
+    border: 1px solid #cfe3d4;
+    border-radius: 10px;
+    padding: 0.8rem 0.9rem;
+    font-size: 1rem;
+    background: #f9fbf9;
+}
+
+.button-row {
+    margin-top: 1.4rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.primary-btn {
+    background: var(--green-700);
+    color: var(--white);
+}
+
+.secondary-btn {
+    background: #e9f7ec;
+    color: var(--green-900);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    transform: translateY(-1px);
+}
+
+.message {
+    margin-top: 1rem;
+    min-height: 1.5rem;
+    color: var(--neutral-700);
+    font-weight: 600;
+}
+
+.message.error { color: #a43939; }
+.message.success { color: var(--green-800); }
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.result-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px var(--shadow);
+    border: 1px solid rgba(18,53,36,0.08);
+}
+
+.result-card.accent {
+    background: linear-gradient(180deg, var(--green-800), var(--green-700));
+    color: var(--white);
+}
+
+.result-label {
+    opacity: 0.8;
+    margin: 0 0 0.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.result-card h3 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2.4rem);
+}
+
+@media (max-width: 640px) {
+    .topbar {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+
+    .button-row {
+        flex-direction: column;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+    }
+}
